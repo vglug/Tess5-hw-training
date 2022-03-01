@@ -1,2 +1,2 @@
 # Imagecrop
-cropping lines from image 
+cropping lines from image using PIL python library
