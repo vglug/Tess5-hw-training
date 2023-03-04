@@ -1,4 +1,4 @@
-# Image pre processing and cropping lines using PIL python library for Tess5-hw-training
+### Image pre processing and cropping lines using PIL python library for Tess5-hw-training
 
 1. Orginal to grayscale
 2. Contrast Increase
