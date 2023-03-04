@@ -18,7 +18,7 @@ with Image.open("tamil.jpeg") as im:
     #grayscaleImg.show("grayscale Image")
     grayscaleImg.save('grascale-image.png')
  
-    #image brightness enhancer
+    #image contrast enhancer
     enhancer = ImageEnhance.Contrast(grayscaleImg)
     
     factor = 1.5 #increase contrast
