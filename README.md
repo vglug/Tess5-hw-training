@@ -5,5 +5,6 @@
 4. Cropping Images line by line.
 
 ### Required Python Packages.
-1. pillow
+1. PIL
 2. os
+3. opencv
