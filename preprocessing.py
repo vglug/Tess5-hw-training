@@ -46,16 +46,16 @@ if os.path.exists(in_path) == True:
 				gray = cv2.cvtColor(im_ap, cv2.COLOR_BGR2GRAY)
 				
 				# Apply binary thresholding
-				thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
+				#thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
 				
-				ret,thresh1 = cv2.threshold(gray, 0, 255,cv2.THRESH_OTSU|cv2.THRESH_BINARY_INV)
+				ret,thresh = cv2.threshold(gray, 0, 255,cv2.THRESH_OTSU|cv2.THRESH_BINARY_INV)
 				
 				#--- choosing the right kernel
 				#--- kernel size of 3 rows (to join dots above letters 'i' and 'j')
 				#--- and 10 columns to join neighboring letters in words and neighboring words
 				rect_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (15, 5))
-				dilation = cv2.dilate(thresh1, rect_kernel, iterations = 10)
-				cv2.imshow('dilation', dilation)
+				dilation = cv2.dilate(thresh, rect_kernel, iterations = 10)
+				#cv2.imshow('dilation', dilation)
 				
 				#---Finding contours ---_, 
 				contours, hierarchy = cv2.findContours(dilation, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
